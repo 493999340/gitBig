@@ -27,7 +27,7 @@ $(function () {
       username: $('#form_reg [name=username]').val(),
       password: $('#form_reg [name=password]').val()
     }
-    console.log(data);
+    // console.log(data);
     $.post('/api/reguser', data, function (res) {
       if (res.status !== 0) {
         return layer.msg(res.message)
