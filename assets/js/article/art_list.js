@@ -90,6 +90,7 @@ $(function () {
         var id = $(this).attr('data-id');
         var len = $('.btn-delete').length;
         layer.confirm('确定删除文章?', { icon: 3, title: '提示' }, function (index) {
+            console.log(999);
             $.ajax({
                 method: 'GET',
                 url: '/my/article/delete/' + id,
@@ -107,7 +108,24 @@ $(function () {
 
             layer.close(index);
         });
+    })
+    $('tbody').on('click', '.btn-edit', function () {
+        // console.log(888);
+        // console.log(this);
+        // var id = $(this).attr('data-id')
+        // console.log(id);
+        // $.ajax({
+        //     method: 'GET',
+        //     url: '/my/article/' + id,
+        //     success: function (res) {
+        //         console.log(res);
+        //         if (res.status !== 0) {
+        //             return layer.msg(res.message);
+        //         }
 
-
+        //     }
+        // })
+        location.href = '/article/art_edit.html?id=' + $(this).attr('data-id')
+        // location.href = '/article/art_edit.html'
     })
 })
